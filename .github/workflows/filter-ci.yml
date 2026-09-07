@@ -1,0 +1,30 @@
+name: yogaq
+
+on:
+  push: 
+    branches:
+      - "main"
+      - "feature/*"
+
+    paths:
+      - ".github/workflows/**"
+
+  pull_request:
+    types:
+     - opened
+     - syncronize
+     - closed
+
+    branches:
+      - "main"
+
+jobs:
+  validations:
+    runs-on: ubuntu-latest
+      
+    steps:
+      - name: run validatinons
+        run: | 
+          echo "workflow succed trigger"
+
+  
