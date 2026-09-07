@@ -1,0 +1,21 @@
+name: dispatch-test
+
+on:
+  workflow_dispatch: 
+    branches:
+      - "main"
+      - "feature/*"
+
+    paths:
+      - "/test/**"
+
+
+jobs:
+  validations:
+    runs-on: ubuntu-latest      
+    steps:
+      - name: run validatinons
+        run: | 
+          cd /test/
+          python3 app.test
+  
