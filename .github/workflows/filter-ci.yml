@@ -26,5 +26,6 @@ jobs:
       - name: run validatinons
         run: | 
           echo "workflow succed trigger"
+          echo "workflow succed on ${{ github.event_name }} event"
 
   
