@@ -2,21 +2,14 @@ name: dispatch-test
 
 on:
   workflow_dispatch: 
-    branches:
-      - "main"
-      - "feature/*"
-
-    paths:
-      - "/test/**"
-
 
 jobs:
   validations:
     runs-on: ubuntu-latest      
     steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
       - name: run validatinons
-        run: | 
-          pwd
-          cd /test/
-          python3 app.test
-  
+        run: python3 /test/app.py
+ 
