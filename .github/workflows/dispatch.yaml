@@ -1,16 +1,15 @@
 name: dispatch-test
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
-  python-test:
-    runs-on: ubuntu-latest      
+  validations:
+    runs-on: ubuntu-latest
     steps:
-      - name: checkout code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: run python
-        run: | 
-          python3 ./test/app.py
- 
+      - name: Run app
+        run: |
+          python3 test/app.py
