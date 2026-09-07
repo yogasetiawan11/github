@@ -16,6 +16,7 @@ jobs:
     steps:
       - name: run validatinons
         run: | 
+          pwd
           cd /test/
           python3 app.test
   
