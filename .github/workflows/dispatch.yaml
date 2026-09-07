@@ -4,12 +4,13 @@ on:
   workflow_dispatch: 
 
 jobs:
-  validations:
+  python-test:
     runs-on: ubuntu-latest      
     steps:
       - name: checkout code
         uses: actions/checkout@v4
 
-      - name: run validatinons
-        run: python3 /test/app.py
+      - name: run python
+        run: | 
+          python3 ./test/app.py
  
