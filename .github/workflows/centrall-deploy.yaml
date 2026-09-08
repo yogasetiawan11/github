@@ -25,9 +25,9 @@ jobs:
     steps:
       - name: Identify
         run: |
-          echo "Name of the applications is ${{inputs.app_name}} "
-          echo "Running Security scans ${{inputs.security.scans}} "
-          echo "Total amount of replicas are ${{inputs.replicas_count}} "
+          echo "Name of the applications is ${{ inputs.app_name }} "
+          echo "Running Security scans ${{ inputs.security.scans }} "
+          echo "Total amount of replicas are ${{ inputs.replicas_count }} "
 
       - name: Deploy the app
         run: echo "Deployment has succed"
