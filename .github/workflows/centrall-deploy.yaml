@@ -1,0 +1,33 @@
+name: workflow call example
+on: 
+  workflow_call:
+    inputs:
+      app_name:
+        required: true
+        type: string
+      
+      boom_test:
+        required: true  
+        type: boolean
+
+      security_scans:
+        required: true  
+        type: boolean
+
+      replicas_count:
+        required: true  
+        type: string
+
+jobs:
+  Deploy_the_app:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Identify
+        run: |
+          echo "Name of the applications is ${{inputs.app_name}} "
+          echo "Running Security scans ${{inputs.security.scans}} "
+          echo "Total amount of replicas are ${{inputs.replicas_count}} "
+
+      - name: Deploy the app
+        run: echo "Deployment has succed"
